@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Home from "./routers/Home";
+// import Nav from './components/Nav';
+
+// BrowserRouter 와 HashRouter 차이 -> #가 붙음
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'; 
+import Detail from "./routers/Detail";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Router basename={process.env.PUBLIC_URL}>
+        {/* <Nav /> */}
+        <Switch>
+          <Route path="/movie/:id">
+            <Detail />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+  )
 }
 
 export default App;
