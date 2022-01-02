@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import style from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -21,9 +22,13 @@ function Home() {
   // }, []);
   // console.log(movies);
   return (
-    <div>
-      {loading ? <h1>Loading...</h1> : 
-        <div>
+    <div className={style.container}>
+      {loading ? ( 
+      <div className={style.loader}>
+        <h1>Loading...</h1> 
+      </div>
+      ) : ( 
+        <div className={style.movies}>
           {movies.map((el) => { // props 화 시키기
             return (
               <Movie
@@ -31,12 +36,14 @@ function Home() {
                 id={el.id} // id를 파라미터로 받아 라우팅해주기 위해
                 medium_cover_image={el.medium_cover_image} 
                 title={el.title}
+                year={el.year}
                 summary={el.summary}
                 genres={el.genres}
               /> // 보내줄 변수들을 지정해주기
             )
           })}
         </div>
+        )
       }
     </div>
   );
