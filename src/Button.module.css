@@ -1,8 +1,12 @@
 .btn {
-  color: white;
-  background-color: tomato;
+  color: black;
+  background-color: #fff2cc;
+  font-family: "Patua" cursive;
+  font-size: 1rem;
 }
 
-/* .bgrd {
-  margin-right: 0;
-} */
+.bgrd {
+  margin-right: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+}

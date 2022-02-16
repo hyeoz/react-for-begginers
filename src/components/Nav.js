@@ -5,11 +5,10 @@ function Nav() {
   return (
     <div className={style.bgrd}>
       <Link to="/">
-        <button className={style.btn}>Main</button>
+        <button className={style.btn}>Back to Main Page</button>
       </Link>
-      <hr />
     </div>
-  )
-};
+  );
+}
 
 export default Nav;
